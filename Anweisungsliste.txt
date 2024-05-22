@@ -1,10 +1,9 @@
-//Netzwerk 1 Notausheader
-U   E   1.7     //Liest Not-Aus-Schalter
-UN  E   1.7     //Negation des Signals
+//Netzwerk 1 Not-Aus Header
+UN  E   1.7     //Liest Not-Aus-Schalter
 S   M   120.3   //Setze Merker 120.3 (STOP), wenn Not-Aus aktiv ist
-UN  E   120.3   //Negation des Merkers
 
-//Netzwerk 2
+//Netzwerk Not-Aus zuruecksetzen
+U   E   1.7     //Liest Not-Ausschalter
 
 
 
