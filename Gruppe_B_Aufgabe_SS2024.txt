@@ -1,0 +1,184 @@
+Netzwerk 1
+
+Not-Aus HALT!
+
+
+Aus Sicherheitsgründen wird in der Industrieautomation der Notausstromkreis so
+ verkabelt,
+ dass ein Notausvorfall ein Abfallen des entsprechenden Signals auf logisch 0 in der SPS
+ bewirkt, da eine Unterbrechung des Notausstromkreises durch Drahtbruch einen sofortigen
+ Stillstand der Anlage zur Folge haben muss. 
+Nach einem Stromausfall bei Spannungswiederkehr muss die Anlage aus einem sicheren
+ Zustand gestartet werden können. Der sich an der Plattform befindliche 
+ Notausschalter (E 1.7) liefert ebenfalls logisch 0, wenn ein Notaus vorliegt. 
+Folgendes ist bei einem Notaus zu tun:
+ Wenn E 1.7 (NotausBit) logisch 0 ist, soll Merker 120.3
+ (STOP) den Zug
+ immer stoppen. Bedenken Sie beim Lösen dieser Aufgabe, dass eine dynamische
+
+ Zuweisung (=) das VKE immer auf den Operanden schreibt, eine Speicherfunktion 1(R, S) nur
+ dann, wenn das VKE logisch 1 ist.
+
+
+Erreichbare Punktzahl:2P
+
+
+--Bitte hier programmieren--
+________________________________________________________________
+Netzwerk 2
+
+Not-Aus Zurücksetzen
+
+
+Die Lok steht im Bahnhof 1. Wenn E 1.7 (NotausBit) logisch 1 wird (!), soll die
+ Lok mit
+ kleiner Geschwindigkeit im Uhrzeigersinn (M 120.2 - Speed1IU) losfahren. 
+
+Anmerkungen:
+- Die Geschwindigkeiten (Speed) sind je nach Fahrtrichtung im Urzeigersinn (IU) und
+ entgegengesetzt (GU) kodiert. Dabei stehen die Geschwindigkeiten 1 bis 3 zur Verfügung.
+- Geschwindigkeiten bitte über eine statische Zuweisung ansprechen.
+
+Erreichbare Punktzahl:4P
+
+--Bitte hier programmieren--
+___________________________________________________________________
+Netzwerk 3
+
+Einbiegen in See-Kehre
+
+
+Beim Überfahren des Reedkontakts "xR03BH1G4" sollen die Weichen zum Einfahren in
+ die See-Kehre gestellt werden.
+ Hierzu sind die Weichen "xW02BH1G4R","xW03CG","xW04CG"
+ zu stellen.
+
+
+Anmerkungen:
+- Die Weichen sind entsprechend ihrer Lager auf der Platte kodiert
+ Beispiel:	"xW02BH1G4R" 	xW02 = Weiche 2 
+							im BH1 = Bahnhof1 
+							auf G4 = Gleis 4 
+							angesprochen auf R = roter Kontakt
+  Achtung!: Aus G und R lassen sich keine logischen Zusammenhänge zum Fahrweg ableiten.
+  Verwenden Sie bitte stets die Angabe der Aufgabenstellung.
+- Die Reedkontakte sind analog mit xR = Reedkontakt kodiert.
+- Pro gestellte Weiche beachten Sie bitte die benötigte Zeit von 300ms. 
+ Die Weichen sprechen Sie bitte dynamisch an mit einer geeigneten Zeitfunktion
+- Als Timer können sie die freien Timer 10-20 verwenden. Beachten Sie, dass nur für
+ zeitgleich ablaufende Operationen der selbe Timer verwendet werden kann.
+
+Erreichbare Punktzahl: 2P
+
+--Bitte hier programmieren--
+___________________________________________________________________
+Netzwerk 4
+
+Ausfahrt nach Bahnhof 3
+
+Beim Überfahren des Reedkontakt "xR01K" sollen die Weichen der Wendeschleife so umgestellt
+ werden, dass eine Weiterfahrt in Richtung Bahnhof 3 mit "Speed2IU" möglich wird. Hierzu
+ sind die Weichen "xW03CR", "xW03BH3G2R", "xW02BH3G2G" sowie "xW04CR" zu stellen.
+Die nachgeschaltete Weiche "xW02CR" ist ebenfalls zu stellen.
+
+
+Erreichbare Punkte: 2P
+
+--Bitte hier programmieren--
+_________________________________________________________________
+Netzwerk 5
+
+Einfahrt auf Hauptstrecke
+
+
+Nach Durchfahrt des Tunnels soll wieder auf die Hauptstrecke eingebogen werden. Hierzu sind
+ mithilfe des Reedkontaktes "xR01BH03G2" die Weichen "xW01DG","xW02DR","xW03DG", "xW03BH1G4G",
+ "xW05BH1G3G", "xW04BH1G2G" sowie "xW05BH1G2G" zu stellen.
+
+Erreichbare Punktzahl: 1P
+
+--Bitte hier programmieren--
+________________________________________________________________
+Netzwerk 6
+
+Durchfahrt Bahnhof 1
+
+Für die Durchfahrt des Bahnhof 1 ist bei Reedkontakt "xR02BH1G1" zunächst die Geschwindigkeit
+ auf "Speed1U" zu reduzieren, sowie die Weichen auf dem Hauptgleis  "xW01BH1G1G" und
+ "xW02BH1G1R"
+ entsprechend zu stellen.
+
+
+Erreichbare Punktzahl: 1P
+
+--Bitte hier programmieren--
+_________________________________________________________________
+Netzwerk 7
+
+Rangierfahrt in Bhf 1
+
+
+Bei Erreichen des Reedkontaktes "xR03A" ist eine Rangierfahrt durchzuführen. Hierzu wird
+ zunächst für 5s gestoppt. 
+Nach Ablauf der 5s sollen die Weichen  "xW02BH1G1G", "xW02BH1G2R", "xW03BH1G2G",
+ "xW02BH1G3R" sowie "xW03BH1G3R" gestellt werden und der Zug soll mit "Speed1GU" zurücksetzen.
+
+
+Erreichbare Punktzahl: 5P
+
+--Bitte hier programmieren--
+__________________________________________________________________
+Netzwerk 8
+
+Weiterfahrt auf Hauptgleis
+
+Wird der Kontakt "xR03BH1G3" erreicht, ist die gegenläufige Rangierfahrt einzuleiten. 
+Zunächst soll der Zug wieder für 5s stoppen, danach sollen die Weichen entsprechend der
+ Ausfahrt auf
+ "xW03BH1G2R", "xW01BH1G2R" gestellt werden. Die Ausfahrt soll mit "Speed1IU" erfolgen.
+
+
+Erreichbare Punktzahl: 3P
+
+--Bitte hier programmieren--
+____________________________________________________________________
+Netzwerk 9
+
+Überlandfahrt
+
+
+Zur Überlandfahrt durch den Bahnhof 2 soll mit voller Geschwindigkeit "Speed3IU" gefahren werden. 
+Diese soll ab Reedkontakt "xR03B" gefahren werden. Gleichzeitig sollen die Weichen "xW04BH2G2G",
+ "xW03BH2G2G", "xW02BH2G2R", "xW01BH2G2R", "xW04DG", "xW05DG", "xW02DG" für den Blockabschnitt
+ gestellt werden.
+
+Erreichbare Punktzahl: 2P
+
+
+--Bitte hier programmieren--
+____________________________________________________________________
+Netzwerk 10
+
+Einfahrt in den Bahnhof 
+
+
+Bei erneutem Erreichen des Reedkontaktes "xR01D" soll die Einfahrt in den Bahnhof 1 wieder auf
+ das ursprüngliche Gleis 4 erfolgen. Hierzu ist die Weiche "xW03BH1G4R" entsprechend zu stellen.
+Die Geschwindigkeit soll auf "Speed1IU" gedrosselt werden.
+
+
+Erreichbare Punktzahl: 3P
+
+--Bitte hier programmieren--
+_____________________________________________________________________
+Netzwerk 11
+
+Halt im Bahnhof 1
+
+Beim erneutem Überfahren des Reedkontaktes "xR03BH1G4" soll der Zug gestoppt werden.
+
+Erreichbare Punktzahl: 2P
+
+--Bitte hier programmieren--
+
+Gesamt 27P.
