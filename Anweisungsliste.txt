@@ -1,0 +1,5 @@
+// Netzwerk 1
+// Header
+A   E   1.7     //Liest Not-Aus-Schalter
+=   M   120.3   //E1.7 auf Merker
+
